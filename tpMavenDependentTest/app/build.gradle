@@ -1,0 +1,133 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.unstall.meetdeleteapp"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        useLibrary 'org.apache.http.legacy'
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar",'*.aar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:28.+'
+    //     Admob
+    implementation 'com.google.android.gms:play-services-ads:17.2.1'
+    implementation ('com.google.android.ads.consent:consent-library:1.0.6'){
+        exclude module: 'gson'
+    }
+    implementation 'com.android.support:multidex:1.0.3'
+//   Facebook
+//
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    // MoPub
+    // For banners
+    implementation('com.mopub:mopub-sdk-banner:5.8.0') {
+        transitive = true
+    }
+
+    // For interstitials
+    implementation('com.mopub:mopub-sdk-interstitial:5.8.0') {
+        transitive = true
+    }
+
+    // For rewarded videos. This will automatically also include interstitials
+    implementation('com.mopub:mopub-sdk-rewardedvideo:5.8.0') {
+        transitive = true
+    }
+
+
+    // For native static (images).
+    implementation('com.mopub:mopub-sdk-native-static:5.8.0') {
+        transitive = true
+    }
+
+    // For native video. This will automatically also include native static
+    implementation('com.mopub:mopub-sdk-native-video:5.8.0') {
+        transitive = true
+    }
+    implementation 'com.tradplus.ads:tradplus-sdk:5.0.01'
+    implementation 'com.tradplus.ads.google:tradplus-google:1.0.6'
+    implementation 'com.tradplus.ads.mopub:tradplus-mopub:1.0.3'
+    //facebook
+    implementation 'com.tradplus.ads.facebook:tradplus-facebook:1.0.7'
+    implementation 'com.facebook.android:audience-network-sdk:5.10.0'
+    //youdao
+    implementation 'com.tradplus.ads.youdao:tradplus-youdao:1.0.0'
+//    //adcolony
+    implementation 'com.tradplus.ads.adcolony:tradplus-adcolony:1.0.4'
+    implementation 'com.adcolony:sdk:4.2.4'
+//    //applovin
+    implementation 'com.tradplus.ads.applovin:tradplus-applovin:1.0.4'
+    implementation 'com.applovin:applovin-sdk:9.11.4'
+//    //flute-unity
+    implementation 'com.tradplus.ads.tradplus-unity:tradplus-unity:1.0.2'
+//    //ironsource
+    implementation 'com.tradplus.ads.ironsource:tradplus-ironsource:1.0.5'
+    implementation 'com.ironsource.sdk:mediationsdk:7.0.1.1'
+//    //kwad
+    implementation 'com.tradplus.ads.kwad:tradplus-kwad:1.0.3'
+//    //mintegral
+    implementation 'com.tradplus.ads.mintegral:tradplus-mintegral:1.0.3'
+    implementation 'com.mintegral.msdk:videojs:10.5.01'
+    implementation 'com.mintegral.msdk:mtgjscommon:10.5.01'
+    implementation 'com.mintegral.msdk:playercommon:10.5.01'
+    implementation 'com.mintegral.msdk:reward:10.5.01'
+    implementation 'com.mintegral.msdk:videocommon:10.5.01'
+    implementation 'com.mintegral.msdk:common:10.5.01'
+    implementation 'com.mintegral.msdk:alphab:10.5.01'
+    implementation 'com.mintegral.msdk:interstitialvideo:10.5.01'
+    implementation 'com.mintegral.msdk:appwall:10.5.01'
+    implementation 'com.mintegral.msdk:mtgnative:10.5.01'
+    implementation 'com.mintegral.msdk:nativeex:10.5.01'
+    implementation 'com.mintegral.msdk:interstitial:10.5.01'
+    implementation 'com.mintegral.msdk:mtgbanner:10.5.01'
+    implementation 'com.mintegral.msdk:mtgsplash:10.5.01'
+//    //mraid
+    implementation 'com.tradplus.ads.mraid:tradplus-mraid:1.0.0'
+//    //sigmob
+    implementation 'com.tradplus.ads.sigmob:tradplus-sigmob:1.0.2'
+//    //tapjoy
+    //Tapjoy
+    implementation 'com.tapjoy:tapjoy-android-sdk:12.6.1@aar'
+    implementation 'com.tradplus.ads.tapjoy:tradplus-tapjoy:1.0.4'
+    //toutiao
+    implementation 'com.tradplus.ads.toutiao:tradplus-toutiao:1.0.6'
+    //pangolin
+//    implementation 'com.bytedance.sdk:pangle-sdk:3.1.5.1'
+//    implementation 'com.tradplus.ads.tt_fpangolin:tradplus-tt_fpangolin:1.0.4'
+//    //txadnet
+    implementation 'com.tradplus.ads.txadnet:tradplus-txadnet:1.0.5'
+//    //vungle
+    implementation 'com.tradplus.ads.vungle:tradplus-vungle:1.0.6'
+    //header bidding
+    //China Plugin
+    implementation 'com.tradplus.china:tradplus-china_plugin:1.0.0'
+    //Crosspro
+    implementation 'com.tradplus.crosspro:tradplus-crosspromotion:1.0.0'
+}

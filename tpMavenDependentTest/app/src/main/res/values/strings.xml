@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo_MavenDependent_test</string>
+    <string name="btn_native">native</string>
+    <string name="btn_reward_load">reward load</string>
+    <string name="btn_reward_show">reward show</string>
+    <string name="btn_interstitial_load">interstitial load</string>
+    <string name="btn_interstitial_show">interstitial show</string>
+    <string name="btn_banner">banner</string>
+</resources>
