@@ -24,20 +24,20 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug{
+        debug {
             minifyEnabled false
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar",'*.aar'])
+    implementation fileTree(dir: "libs", include: ["*.jar", '*.aar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:28.+'
     //     Admob
-    implementation 'com.google.android.gms:play-services-ads:17.2.1'
-    implementation ('com.google.android.ads.consent:consent-library:1.0.6'){
+    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+    implementation('com.google.android.ads.consent:consent-library:1.0.6') {
         exclude module: 'gson'
     }
     implementation 'com.android.support:multidex:1.0.3'
@@ -71,63 +71,104 @@ dependencies {
     implementation('com.mopub:mopub-sdk-native-video:5.8.0') {
         transitive = true
     }
-    implementation 'com.tradplus.ads:tradplus-sdk:5.0.01'
-    implementation 'com.tradplus.ads.google:tradplus-google:1.0.6'
-    implementation 'com.tradplus.ads.mopub:tradplus-mopub:1.0.3'
+    //Maven
+
+    implementation "com.tradplus.ads:tradplus-sdk:${tradplus_ads_v}"
+    implementation "com.tradplus.ads.google:tradplus-googlex:${googlex_ads_v}"
+    implementation "com.tradplus.ads.mopub:tradplus-mopub:${mopub_ads_v}"
     //facebook
-    implementation 'com.tradplus.ads.facebook:tradplus-facebook:1.0.7'
+    implementation "com.tradplus.ads.facebook:tradplus-facebook:${facebook_ads_v}"
     implementation 'com.facebook.android:audience-network-sdk:5.10.0'
     //youdao
-    implementation 'com.tradplus.ads.youdao:tradplus-youdao:1.0.0'
+    implementation "com.tradplus.ads.youdao:tradplus-youdao:${youdao_ads_v}"
 //    //adcolony
-    implementation 'com.tradplus.ads.adcolony:tradplus-adcolony:1.0.4'
+    implementation "com.tradplus.ads.adcolony:tradplus-adcolony:${adcolony_ads_v}"
     implementation 'com.adcolony:sdk:4.2.4'
 //    //applovin
-    implementation 'com.tradplus.ads.applovin:tradplus-applovin:1.0.4'
+    implementation "com.tradplus.ads.applovin:tradplus-applovin:${applovin_ads_v}"
     implementation 'com.applovin:applovin-sdk:9.11.4'
-//    //flute-unity
-    implementation 'com.tradplus.ads.tradplus-unity:tradplus-unity:1.0.2'
+//    //flute-unit
+    implementation "com.tradplus.ads.tradplus-unity:tradplus-unity:${unity_ads_v}"
 //    //ironsource
-    implementation 'com.tradplus.ads.ironsource:tradplus-ironsource:1.0.5'
+    implementation "com.tradplus.ads.ironsource:tradplus-ironsource:${ironsource_ads_v}"
     implementation 'com.ironsource.sdk:mediationsdk:7.0.1.1'
 //    //kwad
-    implementation 'com.tradplus.ads.kwad:tradplus-kwad:1.0.3'
+    implementation "com.tradplus.ads.kwad:tradplus-kwad:${kwad_ads_v}"
 //    //mintegral
-    implementation 'com.tradplus.ads.mintegral:tradplus-mintegral:1.0.3'
-    implementation 'com.mintegral.msdk:videojs:10.5.01'
-    implementation 'com.mintegral.msdk:mtgjscommon:10.5.01'
-    implementation 'com.mintegral.msdk:playercommon:10.5.01'
-    implementation 'com.mintegral.msdk:reward:10.5.01'
-    implementation 'com.mintegral.msdk:videocommon:10.5.01'
-    implementation 'com.mintegral.msdk:common:10.5.01'
-    implementation 'com.mintegral.msdk:alphab:10.5.01'
-    implementation 'com.mintegral.msdk:interstitialvideo:10.5.01'
-    implementation 'com.mintegral.msdk:appwall:10.5.01'
-    implementation 'com.mintegral.msdk:mtgnative:10.5.01'
-    implementation 'com.mintegral.msdk:nativeex:10.5.01'
-    implementation 'com.mintegral.msdk:interstitial:10.5.01'
-    implementation 'com.mintegral.msdk:mtgbanner:10.5.01'
-    implementation 'com.mintegral.msdk:mtgsplash:10.5.01'
+//        implementation "com.tradplus.ads.mintegral:tradplus-mintegral:${mintegral_ads_v}"
 //    //mraid
-    implementation 'com.tradplus.ads.mraid:tradplus-mraid:1.0.0'
+    implementation "com.tradplus.ads.mraid:tradplus-mraid:${mraid_ads_v}"
 //    //sigmob
-    implementation 'com.tradplus.ads.sigmob:tradplus-sigmob:1.0.2'
-//    //tapjoy
+    implementation "com.tradplus.ads.sigmob:tradplus-sigmob:${sigmob_ads_v}"
+
     //Tapjoy
+    implementation "com.tradplus.ads.tapjoy:tradplus-tapjoy:${tapjoy_ads_v}"
     implementation 'com.tapjoy:tapjoy-android-sdk:12.6.1@aar'
-    implementation 'com.tradplus.ads.tapjoy:tradplus-tapjoy:1.0.4'
-    //toutiao
-    implementation 'com.tradplus.ads.toutiao:tradplus-toutiao:1.0.6'
-    //pangolin
-//    implementation 'com.bytedance.sdk:pangle-sdk:3.1.5.1'
-//    implementation 'com.tradplus.ads.tt_fpangolin:tradplus-tt_fpangolin:1.0.4'
-//    //txadnet
-    implementation 'com.tradplus.ads.txadnet:tradplus-txadnet:1.0.5'
+    //    //txadnet
+    implementation "com.tradplus.ads.txadnet:tradplus-txadnet:${txadnet_ads_v}"
 //    //vungle
-    implementation 'com.tradplus.ads.vungle:tradplus-vungle:1.0.6'
-    //header bidding
-    //China Plugin
-    implementation 'com.tradplus.china:tradplus-china_plugin:1.0.0'
+    implementation "com.tradplus.ads.vungle:tradplus-vunglex:${vunglex_ads_v}"
+
     //Crosspro
-    implementation 'com.tradplus.crosspro:tradplus-crosspromotion:1.0.0'
+    implementation "com.tradplus.crosspro:tradplus-crosspromotion:${crosspromotion_v}"
+
+
+    implementation "com.tradplus.startapp:tradplus-startapp:${startapp_ads_v}"
+
+    implementation "com.tradplus.ads.inmobix:tradplus-inmobix:${inmobix_ads_v}"
+
+    implementation "com.tradplus.ads.pubnative:tradplus-pubnative:${pubnative_ads_v}"
+    implementation "com.tradplus.ads.checkimport:tradplus-checkimportsdk:${check_importsdk_v}"
+
+//    implementation "com.tradplus.ads.chartboostx:tradplus-chartboostx:${chartboostx_ads_v}"
+//    implementation "com.google.android.gms:play-services-base:17.4.0"
+//    implementation 'com.chartboost:chartboost-sdk:8.1.0'
+
+    if (isForeign as int == 1) {
+        //toutiao 国内要引入aar ===注意
+        implementation "com.tradplus.ads.toutiao:tradplus-toutiao:${toutiao_ads_v}"
+        implementation(name: 'open_ad_sdk_cn_v3.2.5.1', ext: 'aar')
+        //China Plugin
+        implementation "com.tradplus.china:tradplus-china_plugin:${china_plugin_v}"
+        //mintegral china
+        implementation "com.tradplus.ads.mintegral:tradplus-mintegralx_cn:${mintegralx_cnads_v}"
+        // Please add the code below to your project's build.gradle
+        //native
+        implementation 'com.mintegral.msdk.china:mtgnative:15.2.22'
+        implementation 'com.mintegral.msdk.china:nativeex:15.2.22'
+        implementation 'com.mintegral.msdk.china:playercommon:15.2.22'
+        implementation 'com.mintegral.msdk.china:videocommon:15.2.22'
+        implementation 'com.mintegral.msdk.china:mtgjscommon:15.2.22'
+        implementation 'com.mintegral.msdk.china:chinacommon:15.2.22'
+// Be sure to add mtgdownloads library when you select “APK” option to Yes in the “Add APP” popmenu on Mintegral dashboard.
+        implementation 'com.mintegral.msdk.china:mtgdownloads:15.2.22'
+        //other
+        implementation 'com.mintegral.msdk.china:videojs:15.2.22'
+        implementation 'com.mintegral.msdk.china:reward:15.2.22'
+        implementation 'com.mintegral.msdk.china:interstitialvideo:15.2.22'
+        implementation 'com.mintegral.msdk.china:interstitial:15.2.22'
+        implementation 'com.mintegral.msdk.china:mtgsplash:15.2.22'
+        implementation 'com.mintegral.msdk.china:mtgbanner:15.2.22'
+    } else {
+        //pangolin
+        implementation "com.tradplus.ads.tt_fpangolin:tradplus-tt_fpangolin:${pangle_ads_v}"
+        implementation 'com.bytedance.sdk:pangle-sdk:3.1.5.1'
+        //mintegralx_overseas
+        implementation "com.tradplus.ads.mintegral:tradplus-mintegralx_overseas:${mintegralx_osads_v}"
+        //mintegral
+        //native
+        implementation 'com.mintegral.msdk.oversea:mtgnative:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:nativeex:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:playercommon:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:videocommon:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:mtgjscommon:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:common:15.2.21'
+        //other
+        implementation 'com.mintegral.msdk.oversea:videojs:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:reward:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:interstitialvideo:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:interstitial:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:mtgsplash:15.2.21'
+        implementation 'com.mintegral.msdk.oversea:mtgbanner:15.2.21'
+    }
 }
